@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/goit-command-project-react/static/css/main.7acaea2f.css",
+    "main.js": "/goit-command-project-react/static/js/main.07d3183d.js",
+    "index.html": "/goit-command-project-react/index.html",
+    "main.7acaea2f.css.map": "/goit-command-project-react/static/css/main.7acaea2f.css.map",
+    "main.07d3183d.js.map": "/goit-command-project-react/static/js/main.07d3183d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.07d3183d.js"
+  ]
+}
