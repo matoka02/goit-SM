@@ -1,0 +1,30 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  left: 0;
+  top: 81px;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .overlay {
+    background-color: var(--bg-overlay-color);
+  }
+
+  .modal {
+    left: 50%;
+    top: 50%;
+    width: 672px;
+    height: 573px;
+    transform: translate(-50%, -50%);
+  }
+}

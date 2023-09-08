@@ -1,0 +1,86 @@
+.navigation {
+  display: flex;
+  font-family: 'Gotham Pro', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--muted-color);
+}
+
+.link:hover {
+  color: var(--accent-color);
+}
+
+.passive:hover {
+  color: var(--bg-color);
+}
+
+.link:not(:last-child),
+.linkActive:not(:last-child) {
+  margin-right: 15px;
+}
+
+.linkActive {
+  color: var(--main-color);
+}
+
+.active {
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: var(--bg-color);
+}
+
+.passive {
+  composes: active;
+  color: var(--muted-color);
+}
+
+.menu {
+  cursor: pointer;
+  stroke: var(--main-color);
+}
+
+.menu:hover {
+  stroke: var(--accent-color);
+}
+
+.modalContainer {
+  position: absolute;
+  top: 41px;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  pointer-events: auto;
+  background-color: var(--accent2-color);
+}
+
+@media (min-width: 768px) {
+  .modalContainer {
+    top: calc((737px - 100vh) / 2);
+    padding-top: 100px;
+    margin-left: calc((671px - 100vw) / 2);
+  }
+
+  .active {
+    font-size: 24px;
+  }
+};
+
+@media (min-width: 1280px) {
+  .navigation {
+    position: absolute;
+    top: 120px;
+    left: 192px;
+    padding: 7px 0 7px 22px;
+    border-left: 2px solid var(--line-color);
+  }
+};
