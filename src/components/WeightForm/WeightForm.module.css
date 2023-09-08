@@ -1,0 +1,39 @@
+.form {
+  position: relative;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.input {
+  width: 190px;
+  padding-top: 32px;
+  padding-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid var(--line-color);
+  font-weight: 700;
+}
+
+.button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--accent-color);
+}
+
+.error {
+  position: fixed;
+  top: 80px;
+  margin: 0;
+  font-size: 8px;
+  color: var(--error-color);
+
+  @media screen and (min-width: 480px) {
+    font-size: 10px;
+  }
+}

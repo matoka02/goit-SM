@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    background-image: url('../../images/background/Img-banana-tablet-@1x.png'),
+      url('../../images/background/Img-strawberry-tablet-@1x.png'),
+      url('../../images/background/Img-leaves-tablet-@1x.png'),
+      url('../../images/background/grey-background-tablet.svg');
+    background-repeat: no-repeat;
+    background-position: right bottom, right 40px bottom 180px,
+      right 165px bottom, right bottom;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    background-image: url('../../images/background/leaves.png'),
+      url('../../images/background/Img-strawberry-desktop-@1x.png'),
+      url('../../images/background/Img-banana-desktop-@1x.png'),
+      url('../../images/background/grey-background.svg');
+    background-size: 746px 846px, 286px 289px, 498px 450px, 602px 816px;
+    background-position: right 200px top -20px, right 40px bottom 180px,
+      right top, right bottom;
+  }
+}

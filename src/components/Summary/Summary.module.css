@@ -1,0 +1,106 @@
+.container {
+  width: 100vw;
+  margin-left: -20px;
+  padding: 40px 20px;
+  background-color: var(--bg-tertiary-color);
+}
+
+.title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--main-color);
+}
+
+.summary {
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: var(--muted-color);
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.note {
+  margin: 0 40px 40px 20px;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+}
+
+.link {
+  width: 190px;
+  padding: 13px 30px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 30px;
+  border: 3px solid var(--accent-color);
+  box-shadow: var(--box-shadow);
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  color: var(--accent-color);
+  background-color: var(--bg-color);
+  transition: var(--transition);
+}
+
+.link:hover {
+  color: var(--bg-color);
+  background-color: var(--accent-color);
+}
+
+
+@media screen and (min-width: 480px) {
+  .container {
+    margin-left: calc((480px-100vw)/2-20px);
+    padding: 40px calc((100vw-480px)/2+20px);
+  }
+};
+
+@media screen and (min-width: 768px) {
+  .container {
+    margin-left: calc((768px-100vw)/2-32px);
+    padding: 40px calc((100vw-768px)/2+32px);
+    display: flex;
+    gap: 80px;
+    background-image: url('../../images/background/Img-leaves-tablet-loggedIn-@1x.png');
+    background-position: bottom right;
+    background-repeat: no-repeat;
+  }
+
+  .title {
+    margin-bottom: 40px;
+  }
+
+  .summary {
+    width: 280px;
+  }
+};
+
+@media screen and (min-width: 1280px) {
+  .container {
+    margin-left: 0;
+    margin-top: -246px;
+    padding-left: 100px;
+    padding-top: 255px;
+    display: block;
+    background-image: url('../../images/background/Img-leaves-desktop-@1x.png');
+    background-position: top left 320px;
+  }
+
+  .note {
+    width: 360px;
+    margin: 0 40px 40px -30px;
+    font-size: 16px;
+  }
+
+  .link {
+    margin-left: 60px;
+  }
+};
