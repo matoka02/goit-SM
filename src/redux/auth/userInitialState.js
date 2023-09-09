@@ -1,4 +1,4 @@
-import { ua, en } from 'localization';
+import { en } from 'localization';
 
 const authInitialState = {
   isLoading: true,
