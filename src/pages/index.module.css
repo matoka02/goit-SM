@@ -1,0 +1,125 @@
+.button {
+  width: 48px;
+  height: 48px;
+  margin: 60px auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--accent-color);
+}
+.button:hover {
+  transform-origin: center center;
+  animation: spinner 1.5s linear;
+}
+
+.link {
+  position: relative;
+}
+
+.goBack {
+  position: absolute;
+  top: -56px;
+  stroke: var(--main-color);
+  cursor: pointer;
+}
+
+.modal {
+  padding: 55px 20px 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 5px var(--muted-color);
+  background-color: var(--bg-color);
+  transform: translate(calc((100vw - 280px) / 2), 70%);
+}
+
+.thumb {
+  display: flex;
+}
+
+.reports {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thumbBtns {
+  width: 100%;
+  margin-top: -30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.legend {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dailyRate {
+  width: 50px;
+  height: 0;
+  border: 2px solid #2222ee;
+}
+
+.consumed {
+  composes: dailyRate;
+  border: 2px solid #ff881e;
+}
+
+.weight {
+  composes: dailyRate;
+  border: 2px solid #88ff1e;
+}
+
+
+@keyframes spinner {
+  40% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .button {
+    display: none;
+  }
+
+  .legend {
+    flex-direction: row;
+    gap: 25px;
+    margin-top: 40px;
+  }
+
+  .thumbBtns {
+    flex-direction: row;
+    margin-top: -70px;
+  }
+
+  .modal {
+    transform: none;
+  }
+};
+
+@media screen and (min-width: 1280px) {
+  .container {
+    display: flex;
+  }
+
+  .side {
+    width: 763px;
+    flex-shrink: 0;
+  }
+};
