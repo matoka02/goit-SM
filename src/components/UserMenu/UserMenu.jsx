@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { logOut } from 'redux/auth/userOperations';
+import { logOut } from 'redux/userOperations';
 import { Button, Modal } from 'components';
 import css from './UserMenu.module.css';
 

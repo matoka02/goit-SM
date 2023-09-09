@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { languageSelection } from '../../redux/auth/userReducers';
+import { languageSelection } from '../../redux/userReducers';
 import { Icon } from 'components';
 import css from './LanguageBar.module.css';
 

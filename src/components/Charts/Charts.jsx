@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getReports } from 'redux/product/productOperations';
+import { getReports } from 'redux/productOperation';
 import { useWidth } from 'hooks/useWidth';
 import css from './Charts.module.css';
 

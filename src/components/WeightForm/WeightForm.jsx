@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { updateWeight } from 'redux/product/productOperations';
+import { updateWeight } from 'redux/productOperation';
 import { Icon } from 'components';
 import css from './WeightForm.module.css';
 
