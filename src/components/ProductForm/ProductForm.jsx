@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { add } from 'redux/product/productOperations';
+import { add } from 'redux/productOperation';
 import { useWidth } from 'hooks/useWidth';
 import message from 'helpers/Message';
 import { Icon, Button, Select } from 'components';

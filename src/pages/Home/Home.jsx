@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 
-import { google } from 'redux/auth/userReducers';
-import { setToken } from 'redux/auth/userOperations';
+import { google } from 'redux/userReducers';
+import { setToken } from 'redux/userOperations';
 import { CalculatorForm } from 'components';
 import css from '../index.module.css';
 

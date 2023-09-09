@@ -1,13 +1,14 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-// const { REACT_APP_BASE_URL } = process.env;
+const { REACT_APP_BASE_URL } = process.env;
 
-// axios.defaults.baseURL = REACT_APP_BASE_URL;
-axios.defaults.baseURL = 'https://slimmom-backend.goit.global';
+axios.defaults.baseURL = REACT_APP_BASE_URL;
 
-const setToken = token => {
-  axios.defaults.headers.common.Authorization = token ? `Bearer ${token}` : '';
+export const setToken = token => {
+  axios.defaults.headers.common.Authorization = token
+    ? `Bearer ${token}`
+    : '';
 };
 
 axios.interceptors.response.use(
@@ -16,92 +17,97 @@ axios.interceptors.response.use(
     if (error.response.data.message === 'Not authorized') {
       const refreshToken = localStorage.getItem('refreshToken');
       try {
-        const { data } = await axios.post('/users/refresh', { refreshToken });
+        const { data } = await axios.post('/auth/refresh', {
+          refreshToken,
+        });
         setToken(data.accessToken);
         localStorage.setItem('refreshToken', data.refreshToken);
         error.config.headers.Authorization = `Bearer ${data.accessToken}`;
+
         return axios(error.config);
       } catch (error) {
-        console.error('error: ', error);
-        return Promise.reject(error)
+        console.log('error: ', error);
+        return Promise.reject(error);
       }
-    };
+    }
     return Promise.reject(error);
   }
 );
 
-const registration = createAsyncThunk(
-  'users/register',
-  async (credentials, { rejectWithValue, dispatch }) => {
-    try {
-      await axios.post('/users/register', credentials)
-    } catch (error) {
-      return rejectWithValue(error)
-    }
-  }
-);
-
-const logIn = createAsyncThunk(
+export const logIn = createAsyncThunk(
   'users/login',
   async (credentials, { rejectWithValue, dispatch }) => {
     try {
-      const { data } = await axios.post('/users/login', credentials);
+      const { data } = await axios.post('/auth/login', credentials);
       setToken(data.accessToken);
       localStorage.setItem('refreshToken', data.refreshToken);
       return data;
     } catch (error) {
-      return rejectWithValue(error)
+      return rejectWithValue(error);
     }
   }
 );
 
-const logOut = createAsyncThunk(
+export const registration = createAsyncThunk(
+  'users/register',
+  async (credentials, { rejectWithValue, dispatch }) => {
+    try {
+      await axios.post('/auth/register', credentials);
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
+export const logOut = createAsyncThunk(
   'users/logout',
   async (_, { rejectWithValue, dispatch }) => {
     try {
-      await axios.get('/users/logout');
+      await axios.get('/auth/logout');
       localStorage.setItem('refreshToken', null);
       setToken(null);
     } catch (error) {
-      return rejectWithValue(error)
+      return rejectWithValue(error);
     }
   }
 );
 
-const getUser = createAsyncThunk(
+export const getUser = createAsyncThunk(
   'getUser',
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get('/users/user');
+      const { data } = await axios.get('/user');
       return data;
     } catch (error) {
-      return rejectWithValue(error)
+      return rejectWithValue(error);
     }
   }
 );
 
-const refresh = createAsyncThunk(
+export const refresh = createAsyncThunk(
   'users/refresh',
   async (_, thunkAPI) => {
     const refreshToken = thunkAPI.getState().user.refreshToken;
     const isLoggedIn = thunkAPI.getState().user.isLoggedIn;
     if (refreshToken && !isLoggedIn) {
       try {
-        const { data } = await axios.post('/users/refresh', { refreshToken });
+        const { data } = await axios.post('/users/refresh', {
+          refreshToken,
+        });
         localStorage.setItem('refreshToken', data.refreshToken);
         setToken(data.accessToken);
         thunkAPI.dispatch(getUser());
         return data;
       } catch (error) {
-        return thunkAPI.rejectWithValue(error)
+        return thunkAPI.rejectWithValue(error);
       }
-    };
+    }
 
-    return { refreshToken: null }
+    return { refreshToken: null };
   }
 );
 
-const setDailyRate = createAsyncThunk(
+export const setDailyRate = createAsyncThunk(
   'users/dailyRate',
   async (info, { rejectWithValue, dispatch }) => {
     try {
@@ -109,9 +115,7 @@ const setDailyRate = createAsyncThunk(
       const { dailyRate, bloodGroup } = data;
       return { dailyRate, bloodGroup };
     } catch (error) {
-      return rejectWithValue(error)
+      return rejectWithValue(error);
     }
   }
 );
-
-export { setToken, registration, logIn, logOut, getUser, refresh, setDailyRate };

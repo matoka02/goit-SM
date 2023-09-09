@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { chooseDate } from 'redux/product/productReducers';
+import { chooseDate } from 'redux/productReducers';
 import { Icon } from 'components';
 
 import css from './Calendar.module.css';

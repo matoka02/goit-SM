@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { logIn } from 'redux/auth/userOperations';
+import { logIn } from 'redux/userOperations';
 import { Button, Icon } from 'components';
 import css from './LoginForm.module.css';
 

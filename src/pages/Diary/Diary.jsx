@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { getUserProducts, deleteUserProducts } from 'redux/product/productOperations';
+import { getUserProducts, deleteUserProducts } from 'redux/productOperation';
 import { useWidth } from 'hooks/useWidth';
 import { ProductList, Summary, ProductForm, Icon, Calendar, Modal, Button, WeightForm, } from 'components';
 import css from '../index.module.css';

@@ -2,8 +2,8 @@ import { Suspense, lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { refresh } from 'redux/auth/userOperations';
-import { chooseDate } from 'redux/product/productReducers';
+import { refresh } from 'redux/userOperations';
+import { chooseDate } from 'redux/productReducers';
 import { Header, Loader, PrivateRoute, RestrictedRoute, Container, } from 'components';
 
 const Home = lazy(() => import('pages/Home/Home'));

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setDailyRate } from 'redux/auth/userOperations';
+import { setDailyRate } from 'redux/userOperations';
 import { Modal, Button, Icon } from 'components';
 import css from './CalculatorForm.module.css';
 import HarmfulProductsList from 'components/HarmfulProductsList/HarmfulProductsList';

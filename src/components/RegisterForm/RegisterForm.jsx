@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { registration } from 'redux/auth/userOperations';
+import { registration } from 'redux/userOperations';
 import { Button, Icon } from 'components';
 import css from '../LoginForm/LoginForm.module.css';
 
