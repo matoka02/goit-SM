@@ -4,8 +4,9 @@ import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { setDailyRate } from 'redux/auth/userOperations';
-import { HarmfulProductsList, Modal, Button, Icon } from 'components';
+import { Modal, Button, Icon } from 'components';
 import css from './CalculatorForm.module.css';
+import HarmfulProductsList from 'components/HarmfulProductsList/HarmfulProductsList';
 
 const CalculatorForm = ({ submit = true }) => {
   const [isShowModal, setIsShowModal] = useState(false);

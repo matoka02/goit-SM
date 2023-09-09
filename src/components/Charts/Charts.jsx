@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getReports } from 'redux/auth/userOperations';
+import { getReports } from 'redux/product/productOperations';
 import { useWidth } from 'hooks/useWidth';
 import css from './Charts.module.css';
 
@@ -261,3 +261,5 @@ const Charts = ({ isAllTime }) => {
   )
 
 };
+
+export default Charts;

@@ -1,6 +1,6 @@
-@import-normalize; /* bring in normalize.css styles */
+/* @import-normalize; bring in normalize.css styles */
 
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -12,4 +12,140 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+@import 'modern-normalize/modern-normalize.css';
+
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url('fonts/gothamPro-light.ttf'), url('fonts/gothamPro-bold.ttf');
+};
+
+:root {
+  --main-color: #212121;
+  --line-color: #e0e0e0;
+  --muted-color: #9b9faa;
+  --bg-color: #ffffff;
+  --bg-secondary-color: #eff1f3;
+  --bg-tertiary-color: #f0f1f3;
+  --bg-overlay-color: rgba(33, 33, 33, 0.12);
+  --accent-color: #fc842d;
+  --accent2-color: #264061;
+  --error-color: #ff0000;
+
+  --box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+  --transition: background-color 300ms ease, color 300ms ease;
+
+  --mobile: 480px;
+  --tablet: 768px;
+  --desktop: 1280px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Verdana', sans-serif;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: var(--main-color);
+  background-color: var(--bg-color);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent2-color) var(--bg-tertiary-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+canvas {
+  display: block;
+}
+
+p,
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  padding: 0;
+  cursor: pointer;
+}
+
+a {
+  display: block;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+a:focus-visible {
+  outline: none;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+input {
+  letter-spacing: inherit;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--main-color);
+  -webkit-box-shadow: 0 0 0px 1000px var(--bg-color) inset;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--mobile);
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    max-width: var(--tablet);
+    min-height: 900px;
+    padding: 100px 32px 0;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .main {
+    max-width: var(--desktop);
+    min-height: 850px;
+    flex-direction: row;
+  }
 }
