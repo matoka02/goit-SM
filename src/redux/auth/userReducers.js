@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import message from 'helpers/Message';
 import { ua, en } from 'localization';
 import { registration, logIn, logOut, refresh, getUser, setDailyRate } from './userOperations';
-import userInitialState from './productInitialState';
+import userInitialState from './userInitialState';
 
 const userSlice = createSlice({
   name: 'user',
