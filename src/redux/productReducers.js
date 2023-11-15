@@ -29,7 +29,7 @@ const productSlice = createSlice({
         [add.fulfilled]: (state, action) => {
             state.products = action.payload.products;
             state.consumed = action.payload.consumed;
-            message.sucsess('Product has been successfully added');
+            message.success('Product has been successfully added');
         },
 
         [add.rejected]: (state, action) => {
@@ -68,7 +68,7 @@ const productSlice = createSlice({
         },
 
         [updateWeight.fulfilled]: (state, action) => {
-            message.sucsess('Weight has been successfully recorded');
+            message.success('Weight has been successfully recorded');
         },
 
         [updateWeight.rejected]: (state, action) => {
